@@ -1,0 +1,17 @@
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+CONSTRUCT{
+    ?pand dbo:address ?address.
+}
+{
+    [
+        a bag:Verblijfsobject;
+        bag:pandrelatering ?pand;
+        bag:hoofdadres [
+             bag:huisnummer ?huisnummer;
+             bag:huisletter ?huisletter;
+             bag:bijbehorendeOpenbareRuimte/bag:naamOpenbareRuimte ?openbareruimte;
+        ];
+    ]  
+    FILTER regex(?huisletter,"[a-z]") 
+    BIND (CONCAT(?openbareruimte," ",?huisnummer,?huisletter) AS ?address)
+}

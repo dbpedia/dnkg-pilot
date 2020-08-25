@@ -1,0 +1,12 @@
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+CONSTRUCT{
+    ?pand dbo:locationName ?naamwoonplaats.            
+}
+{
+    [
+       a bag:Verblijfsobject; 
+       bag:pandrelatering ?pand;
+       bag:hoofdadres/bag:bijbehorendeOpenbareRuimte/bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?naamwoonplaats.
+    ]
+} 
+

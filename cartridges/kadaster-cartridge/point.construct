@@ -1,0 +1,13 @@
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
+CONSTRUCT{
+    ?pand georss:point ?point.                     
+}
+{
+    [
+        a bag:Verblijfsobject; 
+        bag:pandrelatering ?pand;
+        bag:pandrelatering/gsp:hasGeometry/gsp:asWKT ?geometry;
+    ]
+    BIND (replace(replace(?geometry, ",.*", ""),"POLYGON\\(\\(", "") AS ?point)
+}

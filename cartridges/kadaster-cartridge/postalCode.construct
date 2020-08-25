@@ -1,0 +1,12 @@
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+CONSTRUCT{
+    ?pand dbo:postalCode ?postcode.
+}
+{
+    [
+      a bag:Verblijfsobject;
+      bag:pandrelatering ?pand;
+      bag:hoofdadres/bag:postcode ?postcode;
+    ]
+}
+
