@@ -1,0 +1,10 @@
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+CONSTRUCT{
+  ?openbareRuimte dbo:status ?status.
+}
+{ 
+     ?openbareRuimte a bag:OpenbareRuimte;
+          bag:status/skos:definition ?status.
+}
+

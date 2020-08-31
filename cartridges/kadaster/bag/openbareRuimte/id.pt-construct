@@ -1,0 +1,9 @@
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+CONSTRUCT {
+ ?openbareRuimte dbo:id ?identificationCode.
+} 
+{ 
+     ?openbareRuimte a bag:OpenbareRuimte;
+     bag:identificatiecode ?identificationCode. 
+}
+

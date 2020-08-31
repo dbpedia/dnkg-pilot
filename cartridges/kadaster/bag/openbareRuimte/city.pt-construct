@@ -1,0 +1,9 @@
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+CONSTRUCT{
+ ?openbareRuimte dbo:city ?city.
+}
+{ 
+     ?openbareRuimte a bag:OpenbareRuimte;
+     bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?city. 
+}
+
