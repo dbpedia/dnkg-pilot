@@ -1,0 +1,8 @@
+CONSTRUCT {
+?s a dbo:Person .
+?s owl:sameAs ?o .
+} {
+?s schema:Person .
+?s owl:sameAs ?o .
+
+}

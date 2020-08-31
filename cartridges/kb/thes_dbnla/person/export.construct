@@ -1,0 +1,7 @@
+CONSTRUCT {
+?s a dbo:Person .
+?s ?p ?o .
+} {
+?s a schema:Person .
+?s ?p ?o .
+}

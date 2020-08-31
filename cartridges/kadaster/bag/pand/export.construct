@@ -1,0 +1,7 @@
+
+
+CONSTRUCT {
+?s a bag:Pand .
+?s ?p ?o .
+
+}{}
