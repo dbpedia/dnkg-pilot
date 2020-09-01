@@ -4,12 +4,14 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-?s a dbo:Person .
+?s a dbo:Place .
 ?s owl:sameAs ?o .
 } {
-?s a schema:Person .
+?s a schema:Place .
 ?s owl:sameAs ?o .
   FILTER (	strstarts(str(?s),"http://data.bibliotheken.nl/id/thes/p")
   	|| 	strstarts(str(?s),"http://data.bibliotheken.nl/id/dbnla/")
   )
 } 
+
+
