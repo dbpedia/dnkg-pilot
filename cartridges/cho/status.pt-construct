@@ -1,0 +1,7 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+CONSTRUCT{
+  ?s dbo:status ?status.
+}{
+ ?s ceo:heeftToestand/skos:prefLabel ?status. 
+}

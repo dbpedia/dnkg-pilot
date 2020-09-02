@@ -1,0 +1,7 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+CONSTRUCT{
+  ?s dbo:municipalityCode ?municipalityCode.
+}{
+ ?s ceo:gemeenteCode ?municipalityCode. 
+}

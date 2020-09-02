@@ -1,0 +1,8 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+CONSTRUCT {
+ ?s dbo:provinceIsoCode ?provinceIsoCode. 
+}{
+?s ceo:provincieCode ?provinceIsoCode 
+ 
+}
