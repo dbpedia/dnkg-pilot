@@ -1,7 +1,4 @@
 @prefix dev: <http://example.com/dev#>.
 
-# describes the source
-# <> dev:sparql <$sparql> .
 <> dev:databusversion <https://databus.dbpedia.org/jj-author/kadaster/bag/2020.07.29> . 
-# <> dev:collection <$collection> .
 

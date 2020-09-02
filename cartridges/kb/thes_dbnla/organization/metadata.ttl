@@ -1,7 +1,4 @@
 @prefix dev: <http://example.com/dev#>.
 
-# describes the source
-<> dev:sparql <http://data.bibliotheken.nl/sparql> .
-# <> dev:databusversion <$versionurl>  . 
-# <> dev:collection <$collection> .
+<> dev:databusversion <$versionurl>  . 
 
