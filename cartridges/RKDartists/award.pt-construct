@@ -1,0 +1,8 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rkd: <http://data.rkd.nl/def#>
+CONSTRUCT{
+  ?s dbo:award ?Award_class.
+}
+{
+ ?s rkd:Award ?Award_class.
+}
