@@ -1,0 +1,8 @@
+
+CONSTRUCT {
+?s owl:sameAs ?o .
+} {
+?s a <https://dblp.org/rdf/schema-2020-07-01#Person> .
+?s owl:sameAs ?o .
+FILTER (strstarts(str(?s),"https://dblp.org/pid")
+}

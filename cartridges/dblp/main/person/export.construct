@@ -1,0 +1,12 @@
+
+CONSTRUCT {
+?s a <http://dbpedia.org/ontology/Person> . 
+?s dbo:created ?work .
+?s ?p ?o . 
+
+} {
+
+?s a <https://dblp.org/rdf/schema-2020-07-01#Person> .
+?s ?p ?o .
+Optional {?work <https://dblp.org/rdf/schema-2020-07-01#authoredBy> ?s .}
+}
