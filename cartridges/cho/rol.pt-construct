@@ -1,7 +1,0 @@
-REFIX dbo: <http://dbpedia.org/ontology/>
-prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
-CONSTRUCT{
-  ?s dbo:role ?role.
-}{
- ?s ceo:rol ?role. 
-}

@@ -1,7 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX rkd: <http://data.rkd.nl/def#>
-CONSTRUCT{
- ?s dbo:period ?period. 
-}{
-  ?s rkd:Period_of_Activity ?period. 
-}

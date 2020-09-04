@@ -1,7 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
-CONSTRUCT{
-  ?s dbo:originalName ?originalName.
-}{
- ?s ceo:oorspronkelijkeNaam ?originalName. 
-}
