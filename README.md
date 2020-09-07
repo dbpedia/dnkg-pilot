@@ -9,6 +9,12 @@ CC-BY - contributions to this repo will be licensed to give attribution to the D
 ## Details 
 We keep the detailed instructions in this [Google Doc](https://docs.google.com/document/d/19VbocJaTaXDlTtOaO8DgbMDgRQo0OhYwvQ3M7CuRDvs/edit)
  
+## Schema Mapping Prototype
+xplain how refresh works 
+
+Cartridge Spreadsheetlink
+Kadaster  -> link
+KB -> Link
 
 ## Folder structure
 
