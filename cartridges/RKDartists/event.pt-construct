@@ -1,7 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX schema: <http://schema.org/>
-CONSTRUCT{
-  ?s dbo:event ?event.
-}{
- ?s schema:event ?event. 
-}

@@ -1,7 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX schema: <http://schema.org/>
-CONSTRUCT{
-  ?s dbo:location ?location.
-}{
-  ?s schema:location ?location. 
-}
