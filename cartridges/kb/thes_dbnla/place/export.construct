@@ -11,5 +11,6 @@ CONSTRUCT {
 ?s ?p ?o .
   FILTER (	strstarts(str(?s),"http://data.bibliotheken.nl/id/thes/p")
   	|| 	strstarts(str(?s),"http://data.bibliotheken.nl/id/dbnla/")
-  )
+  ) .
+  FILTER (str(?p)!="http://www.w3.org/2002/07/owl#sameAs") 
 } 
