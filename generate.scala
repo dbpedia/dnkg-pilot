@@ -43,7 +43,8 @@ def generate(): Unit = {
 	  println(cartname)
 	  println("############")
 
-
+      //TODO add another loop for class
+      val classname = "todoclass"
 	  for (f <- (ls.rec! c).filter(_.toString.endsWith("pt-construct")) ){
 		val pt = f.last.replace(".pt-construct","")  
 		println(pt)
@@ -65,8 +66,8 @@ def generate(): Unit = {
         // todo use algebra to get "deepest" prop
         val deepestProp = "http://todo.org/"
         
-       
-		write.append(outFile,(pt+"\t"+deepestProp+"\n").getBytes(StandardCharsets.UTF_8))
+       //TODO classname
+		write.append(outFile,(cartname+"\t"+classname+"\t"+pt+"\t"+deepestProp+"\n").getBytes(StandardCharsets.UTF_8))
 	  }
    }
    
