@@ -1,3 +1,4 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
 CONSTRUCT{
     ?pand dbo:address ?address.

@@ -1,5 +1,6 @@
 PREFIX dbo: <http://dbpedia.org/ontology/>
 prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
 CONSTRUCT{
   ?s dbo:status ?status.
 }{

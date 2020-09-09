@@ -1,3 +1,4 @@
+PREFIX georss: <http://www.georss.org/georss/>
 PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
 PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
 CONSTRUCT{
