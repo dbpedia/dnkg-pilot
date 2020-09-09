@@ -7,7 +7,7 @@ CONSTRUCT{
     [
        a bag:Verblijfsobject; 
        bag:pandrelatering ?pand;
-       bag:hoofdadres/bag:bijbehorendeOpenbareRuimte/bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?naamwoonplaats.
+       bag:hoofdadres/bag:bijbehorendeOpenbareRuimte/bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?naamwoonplaats;
     ]
 } 
 
