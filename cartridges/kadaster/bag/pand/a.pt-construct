@@ -1,0 +1,11 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+
+CONSTRUCT {
+?s a dbo:Building .
+?s a ?type .
+}
+WHERE {
+?s a bag:Pand .
+?s a ?type .
+} 
