@@ -16,6 +16,7 @@ xplain how refresh works
 
 A spreadsheet is used to show the general properties information for each dataset and the corresponding mapping results. The spreadsheet information is refresh each time it is opened, retrieving it from web services and endpoints. The spreadsheet contains a list of properties and their corresponding direct mappings, if exists, a summary of the prefixes and a brief mapping statistics. 
 - [Kadaster](https://docs.google.com/spreadsheets/d/16gxuMl5B3T-xcGwso8cpXkZFCTXaBEm6qVH7C5hveSc/edit?usp=sharing)
+- [KB](https://docs.google.com/spreadsheets/d/1jMPqJUdvHQglujcXdGZUD22Nie-sWVXEya-NC13QcDg/edit?usp=sharing)
 - [Cultural Heritage Objects (CHO)](https://docs.google.com/spreadsheets/d/1oIV0R3Ugrpt9voFcwK8KSSRlz69yDyU4zF28GcrmiXA/edit?usp=sharing)
 - [RKDartist](https://docs.google.com/spreadsheets/d/1MQ5CIwxnBPlFTM1u1t-ZtxGE9UJE26kW9CP3GSyZ-2I/edit?usp=sharing)
 
