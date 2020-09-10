@@ -1,0 +1,19 @@
+name: Scala CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ammonite
+      uses: yilinwei/setup-ammonite@0.1.0
+    - name: Run SPARQL query test
+      run: amm scripts/generate.scala
