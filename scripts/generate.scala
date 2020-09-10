@@ -31,7 +31,7 @@ import org.apache.jena.sparql.algebra.Op
 //todo add dir  
 @main
 def generate(): Unit = {
-	val dir = pwd / stats
+	val dir = pwd / "stats"
 
   val cartridges = ls! (pwd/"cartridges")
   for (c <- cartridges){
