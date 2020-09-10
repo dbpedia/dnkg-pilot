@@ -18,9 +18,11 @@ jobs:
     - name: Run SPARQL query test
       run: amm scripts/generate.scala
     - name: autocommit
-      #uses: EndBug/add-and-commit@v4.4.0
-      uses: stefanzweifel/git-auto-commit-action@v4.4.1
-      with: 
-        commit_message: "added data from generate.scala output"
-        file_pattern: "*.tsv"
+      uses: EndBug/add-and-commit@v4.4.0
+      with:
+        add: '*.tsv'
+      #uses: stefanzweifel/git-auto-commit-action@v4.4.1
+      #with: 
+      #  commit_message: "added data from generate.scala output"
+      #  file_pattern: "*.tsv"
 
