@@ -20,6 +20,6 @@ jobs:
     - name: autocommit
       uses: EndBug/add-and-commit@v4.4.0
       with:
-        add: '*.tsv'
+        add: 'stats/*.tsv'
 
 
