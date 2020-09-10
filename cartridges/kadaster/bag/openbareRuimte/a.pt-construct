@@ -8,4 +8,4 @@ CONSTRUCT {
 WHERE {
 ?s a bag:OpenbareRuimte .
 ?s a ?type .
-}  Limit 10
+} 
