@@ -1,7 +1,7 @@
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
 CONSTRUCT {
-  ?s a dbo:Building, ?type.
+  ?s a dbo:RouteOfTransportation, ?type.
 } WHERE {
   ?s a bag:OpenbareRuimte, ?type.
 }

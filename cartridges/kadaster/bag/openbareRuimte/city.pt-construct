@@ -1,10 +1,10 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
 CONSTRUCT{
- ?openbareRuimte dbo:city ?city.
-}
-{ 
-     ?openbareRuimte a bag:OpenbareRuimte;
-     bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?city. 
+  ?openbareRuimte a dbo:RouteOfTransportation;
+    dbo:place ?woonplaats.
+} where {
+  ?openbareRuimte a bag:OpenbareRuimte;
+    bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?woonplaats.
 }
 
