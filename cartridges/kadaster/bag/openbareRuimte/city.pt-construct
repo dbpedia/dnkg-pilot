@@ -1,10 +1,9 @@
-PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-CONSTRUCT{
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct {
   ?openbareRuimte a dbo:RouteOfTransportation;
     dbo:place ?woonplaats.
 } where {
   ?openbareRuimte a bag:OpenbareRuimte;
     bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?woonplaats.
 }
-

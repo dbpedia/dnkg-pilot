@@ -1,18 +1,14 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-CONSTRUCT{
-    ?pand dbo:address ?address.
-}
-{
-    [
-        a bag:Verblijfsobject;
-        bag:pandrelatering ?pand;
-        bag:hoofdadres [
-             bag:huisnummer ?huisnummer;
-             bag:huisletter ?huisletter;
-             bag:bijbehorendeOpenbareRuimte/bag:naamOpenbareRuimte ?openbareruimte;
-        ];
-    ]  
-    FILTER regex(?huisletter,"[a-z]") 
-    BIND (CONCAT(?openbareruimte," ",?huisnummer,?huisletter) AS ?address)
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct {
+  ?pand dbo:address ?address.
+} where {
+  ?verblijfsobject
+    bag:pandrelatering ?pand;
+    bag:hoofdadres
+      [ bag:bijbehorendeOpenbareRuimte/bag:naamOpenbareRuimte ?openbareruimte;
+        bag:huisnummer ?huisnummer ].
+  optional { ?verblijfsobject bag:huisletter ?huisletter. }
+  optional { ?verblijfsobject bag:huisnummertoevoeging ?huisnummertoevoeging. }
+  bind(concat(str(?openbareruimte),' ',str(?huisnummer),if(bound(?huisletter),str(?huisletter),''),if(bound(?huisnummertoevoeging),concat('-',str(?huisnummertoevoeging)),'')) as ?address)
 }

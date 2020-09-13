@@ -1,14 +1,10 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-CONSTRUCT {
-    ?pand  dbo:location ?woonplaats
-}{
-    [
-              a bag:Verblijfsobject;
-              bag:pandrelatering ?pand;
-              bag:hoofdadres/bag:bijbehorendeOpenbareRuimte [  
-                            a  bag:Weg;
-                            bag:bijbehorendeWoonplaats ?woonplaats; 
-                   ]
-    ]
-}  
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct {
+  ?pand  dbo:place ?woonplaats.
+} where {
+  [ bag:pandrelatering ?pand;
+    bag:hoofdadres/bag:bijbehorendeOpenbareRuimte
+      [ a bag:Weg;
+        bag:bijbehorendeWoonplaats ?woonplaats ] ].
+}

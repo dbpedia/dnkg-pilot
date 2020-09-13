@@ -1,13 +1,8 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-CONSTRUCT{
-    ?pand dbo:postalCode ?postcode.
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct {
+  ?pand dbo:postalCode ?postcode.
+} where {
+  [ bag:pandrelatering ?pand;
+    bag:hoofdadres/bag:postcode ?postcode ].
 }
-{
-    [
-      a bag:Verblijfsobject;
-      bag:pandrelatering ?pand;
-      bag:hoofdadres/bag:postcode ?postcode;
-    ]
-}
-

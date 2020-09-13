@@ -1,7 +1,4 @@
-
-
-CONSTRUCT {
-?s a bag:Pand .
-?s ?p ?o .
-
-}{}
+construct {
+  ?s a bag:Pand, ?p ?o.
+} where {
+}

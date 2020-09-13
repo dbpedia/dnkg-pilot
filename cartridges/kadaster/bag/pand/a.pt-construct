@@ -1,11 +1,7 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-
-CONSTRUCT {
-?s a dbo:Building .
-?s a ?type .
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct {
+  ?building a dbo:Building, ?type.
+} where {
+  ?building a bag:Pand, ?type.
 }
-WHERE {
-?s a bag:Pand .
-?s a ?type .
-} 

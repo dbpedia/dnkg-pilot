@@ -1,9 +1,9 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-CONSTRUCT{
-   ?openbareRuimte dbo:name ?name.
-}{ 
-     ?openbareRuimte a bag:OpenbareRuimte;
-          bag:naamOpenbareRuimte ?name.
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct {
+  ?openbareRuimte a dbo:RouteOfTransportation;
+    dbo:name ?name.
+} where {
+  ?openbareRuimte a bag:OpenbareRuimte;
+    bag:naamOpenbareRuimte ?name.
 }
-

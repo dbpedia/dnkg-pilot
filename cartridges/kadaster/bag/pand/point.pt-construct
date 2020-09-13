@@ -1,14 +1,10 @@
-PREFIX georss: <http://www.georss.org/georss/>
-PREFIX bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
-CONSTRUCT{
-    ?pand georss:point ?point.                     
-}
-{
-    [
-        a bag:Verblijfsobject; 
-        bag:pandrelatering ?pand;
-        bag:pandrelatering/gsp:hasGeometry/gsp:asWKT ?geometry;
-    ]
-    BIND (replace(replace(?geometry, ",.*", ""),"POLYGON\\(\\(", "") AS ?point)
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix georss: <http://www.georss.org/georss/>
+construct {
+  ?pand georss:point ?georss.
+} where {
+  [ bag:pandrelatering ?pand;
+    geo:hasGeometry/geo:asWKT ?point ].
+  bind(replace(str(?point), "POINT\\(([0-9]*\\.[0-9]*)\\s([0-9]*\\.[0-9]*)\\)", "$2 $1") as ?georss)
 }
