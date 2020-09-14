@@ -16,7 +16,7 @@ jobs:
     - name: Set up Ammonite
       uses: yilinwei/setup-ammonite@0.1.0
     - name: Run SPARQL query test
-      run: amm scripts/generate.scala
+      run: amm scripts/generate.scala --stats stats/ --cartridges cartridges/
     - name: autocommit
       uses: EndBug/add-and-commit@v4.4.0
       with:
