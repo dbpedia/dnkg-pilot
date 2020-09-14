@@ -5,7 +5,7 @@ kadaster	todoclass	place	http://bag.basisregistraties.overheid.nl/def/bag#naamWo
 kadaster	todoclass	status	http://www.w3.org/2004/02/skos/core#definition
 kadaster	todoclass	a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 kadaster	todoclass	address	http://bag.basisregistraties.overheid.nl/def/bag#huisnummertoevoeging
+kadaster	todoclass	georss:point	http://www.opengis.net/ont/geosparql#asWKT
 kadaster	todoclass	location	http://bag.basisregistraties.overheid.nl/def/bag#bijbehorendeWoonplaats
 kadaster	todoclass	locationName	http://bag.basisregistraties.overheid.nl/def/bag#naamWoonplaats
-kadaster	todoclass	point	http://www.opengis.net/ont/geosparql#asWKT
 kadaster	todoclass	postalCode	http://bag.basisregistraties.overheid.nl/def/bag#postcode
