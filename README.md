@@ -12,23 +12,21 @@ We keep the detailed instructions in this [Google Doc](https://docs.google.com/d
 ## View the mapping of Cartridges in our Mapping Viewer Prototype
 The sheets were made by [Julio Hernandez](https://github.com/Julio-Noe) 
 
-* We use Google Sheets to aggregate the data: see TODO add Kadaster link
+* We use Google Sheets to aggregate the data: see [Kadaster mapping viewer](https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSEFQa7KosT1CELS0ELTvpUAsXJymKUNf2xiXteYpys-KOSllGDjP9wmM0Vf8NvDkjqEsyIAKgSR1/pubhtml) 
 * The Sheets use these sources:
   * this git repo (github.io has a **5 min delay**)
-  * mappings.dbpedia.org (no delay)
+  * [DBpedia Mappings](http://mappings.dbpedia.org/) (no delay)
   * VOID statistics on the raw-export dumps on the Databus (these VOID stats are finished some hours after upload of the dump)
-* in each sheet, two main measures are calculated:
+* in each view, two main measures are calculated:
   * impact of a mapping, i.e. when you map one property, it counts how many triples are mapped
   * schema mapping, i.e. how many properties of the schema are mapped
 * the **impact measure** is the most relevant as it measures amount of data mapped 
 * It follows the pareto-efficiency or 20/80 rule, **mapping up to 80% is the goal**
 
-Below a list of all available sheets:
+Below is a list of the available mapping viewers:
 
-- [Kadaster](https://docs.google.com/spreadsheets/d/16gxuMl5B3T-xcGwso8cpXkZFCTXaBEm6qVH7C5hveSc/edit?usp=sharing)
-- [KB](https://docs.google.com/spreadsheets/d/1jMPqJUdvHQglujcXdGZUD22Nie-sWVXEya-NC13QcDg/edit?usp=sharing)
-- [Cultural Heritage Objects (CHO)](https://docs.google.com/spreadsheets/d/1oIV0R3Ugrpt9voFcwK8KSSRlz69yDyU4zF28GcrmiXA/edit?usp=sharing)
-- [RKDartist](https://docs.google.com/spreadsheets/d/1MQ5CIwxnBPlFTM1u1t-ZtxGE9UJE26kW9CP3GSyZ-2I/edit?usp=sharing)
+- [Kadaster](https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSEFQa7KosT1CELS0ELTvpUAsXJymKUNf2xiXteYpys-KOSllGDjP9wmM0Vf8NvDkjqEsyIAKgSR1/pubhtml)
+- [KB](https://docs.google.com/spreadsheets/d/e/2PACX-1vSwhy1BGWl42A-l52iEMYIQUMqzOpCDIxfw2S1blnmjcrXYC94lrQdN1rVS7AA62zzsXjiJ-TV2KL_k/pubhtml#)
 
 ## Folder structure
 
