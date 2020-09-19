@@ -9,12 +9,22 @@ CC-BY - contributions to this repo will be licensed to give attribution to the D
 ## Details 
 We keep the detailed instructions in this [Google Doc](https://docs.google.com/document/d/19VbocJaTaXDlTtOaO8DgbMDgRQo0OhYwvQ3M7CuRDvs/edit)
  
-## Schema Mapping Prototype
-xplain how refresh works 
+## View the mapping of Cartridges in our Mapping Viewer Prototype
+The sheets were made by [Julio Hernandez](https://github.com/Julio-Noe) 
 
-## Cartridge Spreadsheetlink
+* We use Google Sheets to aggregate the data: see the TODO Kadaster example
+* The Sheet uses these sources:
+ * this git repo (github.io has a **5 min delay**)
+ * mappings.dbpedia.org (no delay)
+ * VOID statistics on the raw-export dumps on the Databus (these VOID stats are finished some hours after upload of the dump)
+* in the sheet two main measures are calculated:
+ * impact of a mapping, i.e. when you map one property, it counts how many triples are mapped
+ * schema mapping, i.e. how many properties of the schema are mapped
+* the **impact measure** is the most relevant as it measures amount of data. 
+* It follows the pareto-efficiency or 20/80 rule, **mapping up to 80% is the goal**
 
-A spreadsheet is used to show the general properties information for each dataset and the corresponding mapping results. The spreadsheet information is refresh each time it is opened, retrieving it from web services and endpoints. The spreadsheet contains a list of properties and their corresponding direct mappings, if exists, a summary of the prefixes and a brief mapping statistics. 
+Below a list of all available sheets:
+
 - [Kadaster](https://docs.google.com/spreadsheets/d/16gxuMl5B3T-xcGwso8cpXkZFCTXaBEm6qVH7C5hveSc/edit?usp=sharing)
 - [KB](https://docs.google.com/spreadsheets/d/1jMPqJUdvHQglujcXdGZUD22Nie-sWVXEya-NC13QcDg/edit?usp=sharing)
 - [Cultural Heritage Objects (CHO)](https://docs.google.com/spreadsheets/d/1oIV0R3Ugrpt9voFcwK8KSSRlz69yDyU4zF28GcrmiXA/edit?usp=sharing)
