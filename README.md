@@ -12,15 +12,15 @@ We keep the detailed instructions in this [Google Doc](https://docs.google.com/d
 ## View the mapping of Cartridges in our Mapping Viewer Prototype
 The sheets were made by [Julio Hernandez](https://github.com/Julio-Noe) 
 
-* We use Google Sheets to aggregate the data: see the TODO Kadaster example
-* The Sheet uses these sources:
- * this git repo (github.io has a **5 min delay**)
- * mappings.dbpedia.org (no delay)
- * VOID statistics on the raw-export dumps on the Databus (these VOID stats are finished some hours after upload of the dump)
-* in the sheet two main measures are calculated:
- * impact of a mapping, i.e. when you map one property, it counts how many triples are mapped
- * schema mapping, i.e. how many properties of the schema are mapped
-* the **impact measure** is the most relevant as it measures amount of data. 
+* We use Google Sheets to aggregate the data: see TODO add Kadaster link
+* The Sheets use these sources:
+  * this git repo (github.io has a **5 min delay**)
+  * mappings.dbpedia.org (no delay)
+  * VOID statistics on the raw-export dumps on the Databus (these VOID stats are finished some hours after upload of the dump)
+* in each sheet, two main measures are calculated:
+  * impact of a mapping, i.e. when you map one property, it counts how many triples are mapped
+  * schema mapping, i.e. how many properties of the schema are mapped
+* the **impact measure** is the most relevant as it measures amount of data mapped 
 * It follows the pareto-efficiency or 20/80 rule, **mapping up to 80% is the goal**
 
 Below a list of all available sheets:
