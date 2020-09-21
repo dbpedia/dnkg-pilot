@@ -9,7 +9,7 @@ CC-BY - contributions to this repo will be licensed to give attribution to the D
 ## Details 
 We keep the detailed instructions in this [Google Doc](https://docs.google.com/document/d/1Pm2DSrSIDz5loScdHfPLa6tBzv8NVBNzzEIL5wU5qCQ)
 
-### Mappings Viewer
+## Mappings Viewer
 * [Kadaster](https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSEFQa7KosT1CELS0ELTvpUAsXJymKUNf2xiXteYpys-KOSllGDjP9wmM0Vf8NvDkjqEsyIAKgSR1/pubhtml)
 * [KB](https://docs.google.com/spreadsheets/d/e/2PACX-1vSwhy1BGWl42A-l52iEMYIQUMqzOpCDIxfw2S1blnmjcrXYC94lrQdN1rVS7AA62zzsXjiJ-TV2KL_k/pubhtml#)
 
@@ -36,3 +36,37 @@ where
   * `links.construct` executed over the data to construct the links 
   * `$dbo-property.pt-construct` 0...n files that export the complex structure described in the where clause, to a flat, coarse-grained DBpedia-like structure in the CONSTRUCT clause
 
+### Void Stats
+
+#### Mod SPARQL Endpoint
+* at [akswnc7.informatik.uni-leipzig.de:9062/sparql](http://akswnc7.informatik.uni-leipzig.de:9062/sparql)
+
+Example query to get all property partitions for the kadaster cartridge-input
+```sparql
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX dataid: <http://dataid.dbpedia.org/ns/core#>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dct:    <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?property (SUM(?count) AS ?counts) {
+ SERVICE <https://databus.dbpedia.org/repo/sparql> {
+  ?s dct:publisher <https://dbpedia.github.io/accounts/shared-webids/dnkg.ttl#this> .
+  ?s dataid:artifact <https://databus.dbpedia.org/dnkg/cartridge-input/kadaster> .
+  ?s dcat:distribution/dataid:file ?used .
+ }
+ ?mod prov:generated ?generated .
+ ?mod prov:used ?used .
+ ?generated void:propertyPartition [
+   void:triples ?count ;
+   void:property ?property
+ ] .
+} GROUP BY ?property
+```
+
+#### Mod File Server
+
+* at [akswnc7.informatik.uni-leipzig.de:9060](http//akswnc7.informatik.uni-leipzig.de:9060)
+
+Path structure:
+> $modName/$publisherName/$group/$artifact/$version/$file/$modFiles
