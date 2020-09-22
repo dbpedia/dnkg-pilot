@@ -10,7 +10,7 @@ CC-BY - contributions to this repo will be licensed to give attribution to the D
 We keep the detailed instructions in this [Google Doc](https://docs.google.com/document/d/1Pm2DSrSIDz5loScdHfPLa6tBzv8NVBNzzEIL5wU5qCQ)
 
 ## Mappings Viewer
-* [Kadaster](https://docs.google.com/spreadsheets/d/e/2PACX-1vQcSEFQa7KosT1CELS0ELTvpUAsXJymKUNf2xiXteYpys-KOSllGDjP9wmM0Vf8NvDkjqEsyIAKgSR1/pubhtml)
+* [Kadaster](https://docs.google.com/spreadsheets/d/e/2PACX-1vSZTiEd2FqGPkufIa6kV5mSEyAmT85Uk_SAiLzXU2X6FeXCOgjfklTsjJFtdGP6UBEyU7s5WzqqtYkU/pubhtml)
 * [KB](https://docs.google.com/spreadsheets/d/e/2PACX-1vSwhy1BGWl42A-l52iEMYIQUMqzOpCDIxfw2S1blnmjcrXYC94lrQdN1rVS7AA62zzsXjiJ-TV2KL_k/pubhtml#)
 
 ## Technical Section
