@@ -1,0 +1,8 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+CONSTRUCT {
+?s dbo:created ?work .
+} 
+WHERE {
+?s a <https://dblp.org/rdf/schema-2020-07-01#Person> .
+?work <https://dblp.org/rdf/schema-2020-07-01#authoredBy> ?s .
+}
