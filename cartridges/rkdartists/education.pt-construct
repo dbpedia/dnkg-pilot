@@ -1,9 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX schema: <http://schema.org/>
-PREFIX rkd: <http://data.rkd.nl/def#>
-CONSTRUCT{
- ?s dbo:education ?o. 
-}
-{
-  ?s rkd:Education/schema:name ?o.
-}

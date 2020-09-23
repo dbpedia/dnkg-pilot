@@ -1,9 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX schema: <http://schema.org/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-CONSTRUCT{
-  ?s dbo:endDate ?endDate.
-}{
- ?s schema:endDate ?endDate. 
-  FILTER (datatype(?endDate) = xsd:date)
-}
