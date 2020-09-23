@@ -1,0 +1,10 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX schema: <http://schema.org/>
+PREFIX rkd: <http://data.rkd.nl/def#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+CONSTRUCT{
+ ?s dbo:deathDate ?death. 
+}{
+  ?s rkd:Death/schema:endDate ?death.
+  FILTER (datatype(?death) = xsd:date)
+}
