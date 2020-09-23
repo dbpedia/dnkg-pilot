@@ -1,4 +1,4 @@
-# Overview of the BAG → DBPedia transformation
+# Overview of the BAG → DBpedia transformation
 
 This is a simple overview to ensure that mappings from BAG to DBpedia
 are consistent throughout the various `construct` queries in this
