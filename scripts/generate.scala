@@ -24,8 +24,9 @@ import scala.jdk.CollectionConverters.ListHasAsScala
  */
 //todo add dir
 @main
-def generate(stats: os.Path, cartridges: os.Path): Unit = {
+def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): Unit = {
 
+  //val debugprint = false 
   val cartridgesIter = ls ! cartridges
   for (c <- cartridgesIter) {
     val cartName = (c relativeTo pwd).last
@@ -40,7 +41,7 @@ def generate(stats: os.Path, cartridges: os.Path): Unit = {
     val classname = "todoclass"
     for (f <- (ls.rec ! c).filter(_.toString.endsWith("pt-construct"))) {
       val pt = f.last.replace(".pt-construct", "")
-      println("dbo:"+pt)
+      print(f.last+ " | dbo:"+pt)
       try {
 
         //todo add prefixes to queries
@@ -56,15 +57,19 @@ def generate(stats: os.Path, cartridges: os.Path): Unit = {
         OpWalker.walk(op, collector);
 
         val deepestProp = collector.getProps().last
-        println("+- DeepProp:\n\t"+deepestProp)
-
-        println("+- QUERY:\n\t" + query.toString().split("\n").mkString("\n\t"))
-        println("+- OP:\n\t" + op.toString().split("\n").mkString("\n\t"))
-
+        if(debugprint){
+			println("+- DeepProp:\n\t"+deepestProp)
+			println("+- QUERY:\n\t" + query.toString().split("\n").mkString("\n\t"))
+			println("+- OP:\n\t" + op.toString().split("\n").mkString("\n\t"))
+		}
         //TODO classname
         write.append(outFile, (cartName + "\t" + classname + "\t" + pt + "\t" + deepestProp + "\n").getBytes(StandardCharsets.UTF_8))
+		println(" |-> OK")
       } catch {
-        case e: Exception => println("fix " + f); e.printStackTrace()
+        case e: Exception => {
+			println("\nfix:\n " + f +"\n"+e.getMessage)
+			System.exit(-1)
+			}
       }
     }
   }
