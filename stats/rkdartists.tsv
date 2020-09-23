@@ -3,3 +3,8 @@ rkdartists	todoclass	deathDate	http://schema.org/endDate
 rkdartists	todoclass	education	http://schema.org/name
 rkdartists	todoclass	endDate	http://schema.org/endDate
 rkdartists	todoclass	startDate	http://schema.org/startDate
+rkdartists	todoclass	birthDate	http://schema.org/endDate
+rkdartists	todoclass	deathDate	http://schema.org/endDate
+rkdartists	todoclass	education	http://schema.org/name
+rkdartists	todoclass	endDate	http://schema.org/endDate
+rkdartists	todoclass	startDate	http://schema.org/startDate
