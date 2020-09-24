@@ -9,14 +9,8 @@
   </parent>
   <groupId>raw-exports</groupId>
   <artifactId>group-metadata</artifactId>
-  <version>2020.07.29</version>
+  <version>2020.08.18</version>
   <packaging>pom</packaging>
-  <modules>
-    <module>kadaster</module>
-    <!-- <module>kadaster-cartridge</module>
-    <module>kb-cartridge</module>
-    <module>nl-dbpedia-cartridge</module> -->
-  </modules>
   <properties>
     <databus.publisher.name>dnkg</databus.publisher.name>
 <databus.documentation>

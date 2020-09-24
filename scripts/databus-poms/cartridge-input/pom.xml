@@ -11,12 +11,10 @@
   <artifactId>group-metadata</artifactId>
   <version>2020.08.08</version>
   <packaging>pom</packaging>
-  <modules>
+  <!--<modules>
     <module>kb</module>
     <module>kadaster</module>
-    <!--<module>kb-cartridge</module>
-    <module>nl-dbpedia-cartridge</module> -->
-  </modules>
+  </modules>-->
   <properties>
     <databus.publisher.name>dnkg</databus.publisher.name>
 <databus.documentation>
