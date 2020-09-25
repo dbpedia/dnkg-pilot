@@ -47,6 +47,19 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 
 		  val partitionName = partition.last
 		  println("|->"+partitionName + " at " + partition)
+			for (forValidation <- (ls.rec ! partition).filter(_.toString.endsWith(".construct"))) {
+				try{
+					val q = read ! forValidation
+					val query: Query = QueryFactory.create(q);
+					val op: Op = Algebra.compile(query);
+				 } catch {
+				case e: Exception => {
+					println("\nfix:\n " + forValidation +"\n"+e.getMessage)
+					System.exit(-1)
+					}
+			  }//end catch
+			}
+
 
 			for (queryFile <- (ls.rec ! partition).filter(_.toString.endsWith("pt-construct"))) {
 			  val pt = queryFile.last.replace(".pt-construct", "")

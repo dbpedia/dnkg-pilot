@@ -1,4 +1,9 @@
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+
 construct {
-  ?s a bag:Pand, ?p ?o.
+  ?s a dbo:Building; ?p ?o.
 } where {
+  ?s a bag:Pand; ?p ?o.
+
 }
