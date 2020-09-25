@@ -1,4 +1,0 @@
-@prefix dev: <http://example.com/dev#>.
-
-<> dev:databusversion <$versionurl>  . 
-

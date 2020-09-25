@@ -1,3 +1,0 @@
-prefix dev: <http://example.com/dev#>
-
-<> dev:databusversion <https://databus.dbpedia.org/jj-author/kadaster/bag/2020.07.29>. 
