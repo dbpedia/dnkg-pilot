@@ -1,0 +1,12 @@
+cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+kadaster	bag	openbareRuimte	a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/a.pt-construct
+kadaster	bag	openbareRuimte	id	http://bag.basisregistraties.overheid.nl/def/bag#identificatiecode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/id.pt-construct
+kadaster	bag	openbareRuimte	name	http://bag.basisregistraties.overheid.nl/def/bag#naamOpenbareRuimte	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/name.pt-construct
+kadaster	bag	openbareRuimte	place	http://bag.basisregistraties.overheid.nl/def/bag#naamWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/place.pt-construct
+kadaster	bag	openbareRuimte	status	http://www.w3.org/2004/02/skos/core#definition	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/status.pt-construct
+kadaster	bag	pand	a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/a.pt-construct
+kadaster	bag	pand	address	http://bag.basisregistraties.overheid.nl/def/bag#huisnummertoevoeging	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/address.pt-construct
+kadaster	bag	pand	georss:point	http://www.opengis.net/ont/geosparql#asWKT	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/georss:point.pt-construct
+kadaster	bag	pand	location	http://bag.basisregistraties.overheid.nl/def/bag#bijbehorendeWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/location.pt-construct
+kadaster	bag	pand	locationName	http://bag.basisregistraties.overheid.nl/def/bag#naamWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/locationName.pt-construct
+kadaster	bag	pand	postalCode	http://bag.basisregistraties.overheid.nl/def/bag#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/postalCode.pt-construct

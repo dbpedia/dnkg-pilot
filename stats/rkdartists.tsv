@@ -1,5 +1,5 @@
-rkdartists	todoclass	birthDate	http://schema.org/endDate
-rkdartists	todoclass	deathDate	http://schema.org/endDate
-rkdartists	todoclass	education	http://schema.org/name
-rkdartists	todoclass	endDate	http://schema.org/endDate
-rkdartists	todoclass	startDate	http://schema.org/startDate
+rkdartists	artist	birthDate	http://schema.org/endDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/birthDate.pt-construct
+rkdartists	artist	deathDate	http://schema.org/endDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/deathDate.pt-construct
+rkdartists	artist	education	http://schema.org/name	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/education.pt-construct
+rkdartists	artist	endDate	http://schema.org/endDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/endDate.pt-construct
+rkdartists	artist	startDate	http://schema.org/startDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/startDate.pt-construct

@@ -1,0 +1,2 @@
+cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+cho	main	monument	status	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/status.pt-construct
