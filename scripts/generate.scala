@@ -28,49 +28,63 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 
   //val debugprint = false 
   val cartridgesIter = ls ! cartridges
-  for (c <- cartridgesIter) {
-    val cartName = (c relativeTo pwd).last
-    val outFile: os.Path = stats / (cartName + ".tsv")
+  for (cartridge <- cartridgesIter) {
+    val cartridgeName = (cartridge relativeTo pwd).last
+    val outFile: os.Path = stats / (cartridgeName + ".tsv")
+    val outFileNew: os.Path = stats / (cartridgeName + "_new.tsv")
     rm ! outFile
+    rm ! outFileNew
+	write.append(outFileNew, ("cartridge/publisher\tdataset\tpartition\tprop target(pt)\tdeepestProp\tgithub \n").getBytes(StandardCharsets.UTF_8))
 
-    println("############")
-    println(cartName)
-    println("############")
+    println("\n"+cartridgeName + " at " + cartridge)
+   
+    for (dataset <- ls ! cartridge) {
 
-    //TODO add another loop for class
-    val classname = "todoclass"
-    for (f <- (ls.rec ! c).filter(_.toString.endsWith("pt-construct"))) {
-      val pt = f.last.replace(".pt-construct", "")
-      print(f.last+ " | dbo:"+pt)
-      try {
+		val datasetName = dataset.last
+		println("|>"+datasetName + " at " + dataset)
 
-        //todo add prefixes to queries
-        //todo DONE(await check) "visit the algebra Ops and pick the most bottom prop"
-        // see visitors https://jena.apache.org/documentation/query/manipulating_sparql_using_arq.html
+		for (partition <- (ls ! dataset).filter(!_.toString.endsWith(".md"))) {
 
-        val q = read ! f
-        val query: Query = QueryFactory.create(q);
-        val op: Op = Algebra.compile(query);
+		  val partitionName = partition.last
+		  println("|->"+partitionName + " at " + partition)
 
-        val collector = new DeepPropVisitor()
+			for (queryFile <- (ls.rec ! partition).filter(_.toString.endsWith("pt-construct"))) {
+			  val pt = queryFile.last.replace(".pt-construct", "")
+			  print("|-->"+queryFile.last+ " | dbo:"+pt)
+			  try {
 
-        OpWalker.walk(op, collector);
+				//todo add prefixes to queries
+				//todo DONE(await check) "visit the algebra Ops and pick the most bottom prop"
+				// see visitors https://jena.apache.org/documentation/query/manipulating_sparql_using_arq.html
 
-        val deepestProp = collector.getProps().last
-        if(debugprint){
-			println("+- DeepProp:\n\t"+deepestProp)
-			println("+- QUERY:\n\t" + query.toString().split("\n").mkString("\n\t"))
-			println("+- OP:\n\t" + op.toString().split("\n").mkString("\n\t"))
-		}
-        //TODO classname
-        write.append(outFile, (cartName + "\t" + classname + "\t" + pt + "\t" + deepestProp + "\n").getBytes(StandardCharsets.UTF_8))
-		println(" |-> OK")
-      } catch {
-        case e: Exception => {
-			println("\nfix:\n " + f +"\n"+e.getMessage)
-			System.exit(-1)
-			}
-      }
+				val q = read ! queryFile
+				val query: Query = QueryFactory.create(q);
+				val op: Op = Algebra.compile(query);
+
+				val collector = new DeepPropVisitor()
+
+				OpWalker.walk(op, collector);
+
+				val deepestProp = collector.getProps().last
+				if(debugprint){
+					println("+- DeepProp:\n\t"+deepestProp)
+					println("+- QUERY:\n\t" + query.toString().split("\n").mkString("\n\t"))
+					println("+- OP:\n\t" + op.toString().split("\n").mkString("\n\t"))
+				}
+				val ghlink = s"https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/$cartridgeName/$datasetName/$partitionName/$pt.pt-construct"
+				//NEW
+				write.append(outFileNew, (cartridgeName + "\t" +datasetName+"\t" + partitionName + "\t" + pt + "\t" + deepestProp + "\t"+ghlink+"\n").getBytes(StandardCharsets.UTF_8))
+				//TODO old one 
+				write.append(outFile, (cartridgeName + "\t" + partitionName + "\t" + pt + "\t" + deepestProp + "\t"+ghlink+"\n").getBytes(StandardCharsets.UTF_8))
+				println(" |-> OK")
+			  } catch {
+				case e: Exception => {
+					println("\nfix:\n " + queryFile +"\n"+e.getMessage)
+					System.exit(-1)
+					}
+			  }//end catch
+			}//end files
+		}//end partition	
     }
   }
 }
