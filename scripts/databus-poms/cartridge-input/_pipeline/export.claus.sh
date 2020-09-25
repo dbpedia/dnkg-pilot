@@ -5,17 +5,17 @@ git pull
 cd ..
 wget -nc https://github.com/SmartDataAnalytics/RdfProcessingToolkit/releases/download/rdf-processing-toolkit-bundle-1.0.7-SNAPSHOT/rdf-processing-toolkit-bundle-1.0.7-SNAPSHOT-jar-with-dependencies.jar
 cartridges=../
-cartridge=rkdartists
+cartridge=dblp
 dataset=main
 version=2020.09.24
-rawinput=
+rawinput=tmp/downloads/dblp-2020-08-18.nt.gz
 for folder in dnkg-pilot/cartridges/$cartridge/$dataset/* ; do
 	tmp=tmp/$cartridge/$dataset/$version
 	mkdir -p $tmp
 	db=$tmp/tdb_files
 	type=$(basename $folder)
 	echo "processing queries for $folder into $tmp/$type"
-	java -jar rdf-processing-toolkit-bundle-1.0.7-SNAPSHOT-jar-with-dependencies.jar sparql-integrate -e tdb2 --split $tmp/$type $rawinput $folder/*construct --db $db --db-keep --out-format=NTRIPLES
+#	java -jar rdf-processing-toolkit-bundle-1.0.7-SNAPSHOT-jar-with-dependencies.jar sparql-integrate -e tdb2 --split $tmp/$type $rawinput $folder/*construct --db $db --db-keep --out-format=NTRIPLES
        for f in $tmp/$type/*.nt ; do
 	       prop=$(basename $f .nt)
 	       fileprefix=${cartridge}_partition\=${type}_set\=${dataset}_content\=
@@ -27,7 +27,9 @@ for folder in dnkg-pilot/cartridges/$cartridge/$dataset/* ; do
 	       echo "sort + dedup + compress $file"
 	       LC_ALL=C sort -u $f | lbzip2 -c > $tmp/$type/$file.nt.bz2 
        done
-       grep "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" $tmp/$type/export.nt | LC_ALL=C sort -u $f | lbzip2 -c > $tmp/$type/${fileprefix}types.nt.bz2
+
+       grep "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <" $tmp/$type/export.nt | LC_ALL=C sort -u | lbzip2 -c > $tmp/$type/${fileprefix}types.nt.bz2
+
  :' for construct in $folder/*.pt-construct ; do 
 	  prop=$(basename $construct .pt-construct)
 	  type=$(basename $folder)
