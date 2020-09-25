@@ -1,0 +1,6 @@
+cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+rkdartists	main	artist	birthDate	http://schema.org/endDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/birthDate.pt-construct
+rkdartists	main	artist	deathDate	http://schema.org/endDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/deathDate.pt-construct
+rkdartists	main	artist	education	http://schema.org/name	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/education.pt-construct
+rkdartists	main	artist	endDate	http://schema.org/endDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/endDate.pt-construct
+rkdartists	main	artist	startDate	http://schema.org/startDate	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/rkdartists/main/artist/startDate.pt-construct

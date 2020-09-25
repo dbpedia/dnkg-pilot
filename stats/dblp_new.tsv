@@ -1,0 +1,2 @@
+cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+dblp	main	person	created	https://dblp.org/rdf/schema-2020-07-01#authoredBy	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/dblp/main/person/created.pt-construct
