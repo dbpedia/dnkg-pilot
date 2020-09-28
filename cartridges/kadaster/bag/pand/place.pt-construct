@@ -1,8 +1,0 @@
-prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
-prefix dbo: <http://dbpedia.org/ontology/>
-construct {
-  ?pand dbo:place ?woonplaats.
-} where {
-  [ bag:pandrelatering ?pand;
-    bag:hoofdadres/bag:bijbehorendeOpenbareRuimte/bag:bijbehorendeWoonplaats/bag:naamWoonplaats ?woonplaats ].
-}
