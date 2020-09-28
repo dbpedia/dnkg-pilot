@@ -1,0 +1,12 @@
+
+
+
+CONSTRUCT {
+?s a <http://dbpedia.org/ontology/Monument> . 
+?s ?p ?o . 
+} WHERE {
+?s a <https://linkeddata.cultureelerfgoed.nl/datamodel#Rijksmonument> .
+?s ?p ?o .
+}
+
+

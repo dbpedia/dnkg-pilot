@@ -47,6 +47,14 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 
 		  val partitionName = partition.last
 		  println("|->"+partitionName + " at " + partition)
+		  
+		    if((ls.rec ! partition).filter(_.toString.endsWith("links.construct")).isEmpty ){
+				println ("WARNING no links.construct found")
+				}
+			 if((ls.rec ! partition).filter(_.toString.endsWith("export.construct")).isEmpty ){
+				println ("ERROR: no export.construct found")
+				System.exit(-1)
+				}
 			for (forValidation <- (ls.rec ! partition).filter(_.toString.endsWith(".construct"))) {
 				try{
 					val q = read ! forValidation
