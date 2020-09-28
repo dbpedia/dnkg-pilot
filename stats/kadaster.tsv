@@ -1,7 +1,7 @@
 kadaster	openbareRuimte	a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/a.pt-construct
 kadaster	openbareRuimte	id	http://bag.basisregistraties.overheid.nl/def/bag#identificatiecode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/id.pt-construct
+kadaster	openbareRuimte	location	http://bag.basisregistraties.overheid.nl/def/bag#naamWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/location.pt-construct
 kadaster	openbareRuimte	name	http://bag.basisregistraties.overheid.nl/def/bag#naamOpenbareRuimte	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/name.pt-construct
-kadaster	openbareRuimte	place	http://bag.basisregistraties.overheid.nl/def/bag#naamWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/place.pt-construct
 kadaster	openbareRuimte	status	http://www.w3.org/2004/02/skos/core#definition	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/openbareRuimte/status.pt-construct
 kadaster	pand	a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/a.pt-construct
 kadaster	pand	address	http://bag.basisregistraties.overheid.nl/def/bag#huisnummertoevoeging	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/address.pt-construct
