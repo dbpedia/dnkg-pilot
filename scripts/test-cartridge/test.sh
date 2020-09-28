@@ -37,14 +37,12 @@ for f in ${files} ; do
 	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '^{"predicate":{"@id":"\K(.*)(?="},"subject")'| sort | uniq -c | sort -nr  >> /tmp/cartridgestats/predicates.lst 
 	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '"subject":{"@id":"\K(.*)(?="},"objects")' | sort -u >> /tmp/cartridgestats/subjects.lst 
 done
-echo 
-"###################
+echo "###################
 not rewritten preds
 ###################"
-grep -v 'global.dbpedia.org' | grep -v 'dbpedia.org/ontology' /tmp/cartridgestats/predicates.lst 
+grep -v 'global.dbpedia.org' /tmp/cartridgestats/predicates.lst  | grep -v 'dbpedia.org/ontology' 
 
-echo 
-"###################
+echo "###################
 preds not in id mapping
 ###################"
 grep  'global.dbpedia.org'  /tmp/cartridgestats/predicates.lst 
