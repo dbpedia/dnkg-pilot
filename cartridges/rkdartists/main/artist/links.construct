@@ -1,0 +1,11 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+construct {
+	?s a dbo:Artist.
+	?s owl:sameAs ?o.
+} where {
+	?s a schema:Person.
+	?s owl:sameAs ?o.
+}

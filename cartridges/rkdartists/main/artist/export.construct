@@ -1,0 +1,7 @@
+PREFIX schema: <http://schema.org/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+construct {
+	?s a dbo:Artist; ?p ?o.
+} where {
+	?s a schema:Person; ?p ?o. 		
+}

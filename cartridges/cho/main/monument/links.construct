@@ -1,0 +1,12 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+CONSTRUCT {
+	?s a dbo:Monument .
+ 	?s owl:sameAs ?o.
+}{
+	?s a ceo:Rijksmonument .
+	?s owl:sameAs ?o .
+	FILTER (strstarts(str(?s), "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/"))
+
+}

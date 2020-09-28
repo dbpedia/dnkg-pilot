@@ -1,0 +1,10 @@
+PREFIX bag:<http://bag.basisregistraties.overheid.nl/def/bag#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT {
+	?s a dbo:Building.
+	?s owl:sameAs ?o.
+}{
+	?s a bag:Pand .
+	?s owl:sameAs ?o .
+}

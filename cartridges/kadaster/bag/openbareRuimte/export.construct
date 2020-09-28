@@ -1,0 +1,7 @@
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct {
+  ?openbareRuimte a dbo:RouteOfTransportation, ?type.
+} where {
+  ?openbareRuimte a bag:OpenbareRuimte, ?type.
+}
