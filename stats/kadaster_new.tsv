@@ -8,5 +8,4 @@ kadaster	bag	pand	a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://gith
 kadaster	bag	pand	address	http://bag.basisregistraties.overheid.nl/def/bag#huisnummertoevoeging	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/address.pt-construct
 kadaster	bag	pand	georss:point	http://www.opengis.net/ont/geosparql#asWKT	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/georss:point.pt-construct
 kadaster	bag	pand	location	http://bag.basisregistraties.overheid.nl/def/bag#bijbehorendeWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/location.pt-construct
-kadaster	bag	pand	place	http://bag.basisregistraties.overheid.nl/def/bag#naamWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/place.pt-construct
 kadaster	bag	pand	postalCode	http://bag.basisregistraties.overheid.nl/def/bag#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/postalCode.pt-construct
