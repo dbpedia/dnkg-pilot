@@ -18,7 +18,7 @@ import scala.jdk.CollectionConverters.ListHasAsScala
 /**
  * generate usefull csv per cartridge
  *
- * amm generate.scala --stats ../stats --cartridges ../cartridges
+amm generate.scala --stats ../stats --cartridges ../cartridges
  *
  * @param stats directory to deploy, e.g. '/var/www'
  */

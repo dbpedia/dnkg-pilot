@@ -10,6 +10,6 @@ CONSTRUCT {
 ?s owl:sameAs ?o .
 } {
 ?s a schema:Organization .
-?s owl:sameAs ?o .
+{{?s owl:sameAs ?o .}UNION {?s schema:sameAs ?o}}
   FILTER (	strstarts(str(?s),"http://data.bibliotheken.nl/id/thes/p")  )
 } 

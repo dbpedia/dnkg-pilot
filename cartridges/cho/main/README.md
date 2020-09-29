@@ -73,3 +73,22 @@ instancecount 	class
 1	http://www.w3.org/2000/01/rdf-schema#Datatype 
 1	http://www.w3.org/2002/07/owl#Ontology 
 1	http://www.w3.org/ns/dcat#Dataset 
+
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT * WHERE {
+ ?a ?b  <https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/bagrelatie/18348> . 
+ <https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/bagrelatie/18348> ?p ?o .
+} 
+
+
+a 	b 	p 	o 
+https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/basisregistratierelatie/16628 	https://linkeddata.cultureelerfgoed.nl/def/ceo#heeftBAGRelatie 	http://www.w3.org/1999/02/22-rdf-syntax-ns#type 	https://linkeddata.cultureelerfgoed.nl/def/ceo#BAGRelatie 
+https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/basisregistratierelatie/16628 	https://linkeddata.cultureelerfgoed.nl/def/ceo#heeftBAGRelatie 	https://linkeddata.cultureelerfgoed.nl/def/ceo#BAGRelatienummer 	18348
+https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/basisregistratierelatie/16628 	https://linkeddata.cultureelerfgoed.nl/def/ceo#heeftBAGRelatie 	https://linkeddata.cultureelerfgoed.nl/def/ceo#pandIdentificatie 	654100000003531
+https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/basisregistratierelatie/16628 	https://linkeddata.cultureelerfgoed.nl/def/ceo#heeftBAGRelatie 	https://linkeddata.cultureelerfgoed.nl/def/ceo#verblijfsobjectIdentificatie 	654010000001819
+
+

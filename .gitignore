@@ -1,2 +1,4 @@
 target/
 pom.xml.versionsBackup
+stats/*.tsv
+scripts/*/*.txt
