@@ -1,2 +1,6 @@
 cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+cho	main	monument	georss:point	https://linkeddata.cultureelerfgoed.nl/def/ceo#asWKT-RD	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/georss:point.pt-construct
+cho	main	monument	postalcode	https://linkeddata.cultureelerfgoed.nl/def/ceo#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/postalcode.pt-construct
+cho	main	monument	rdfs:comment	https://linkeddata.cultureelerfgoed.nl/def/ceo#omschrijving	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/rdfs:comment.pt-construct
 cho	main	monument	status	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/status.pt-construct
+cho	main	monument	todo	https://linkeddata.cultureelerfgoed.nl/def/ceo#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/todo.pt-construct
