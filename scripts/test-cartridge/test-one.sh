@@ -4,7 +4,7 @@ CARTRIDGE=$1
 
 ## SETUP
 TMPFOLDER="/tmp/cartridgestats/"`echo -n $CARTRIDGE | sed 's|^https://databus.dbpedia.org/dnkg/cartridges/||'`
-rm -r $TMPFOLDER
+rm -vr $TMPFOLDER
 mkdir -p $TMPFOLDER
 echo -n "" > $TMPFOLDER/predicates.lst
 echo -n "" > $TMPFOLDER/subjects.lst
@@ -40,9 +40,11 @@ for f in ${files} ; do
     echo "processing $f"
 	curl -s $f > /tmp/cartridgestats/current.bz2
 	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '^{"predicate":{"@id":"\K(.*)(?="},"subject")' >> $TMPFOLDER/predicates.all.lst 
-	cat $TMPFOLDER/predicates.all.lst 	| sort | uniq -c | sort -nr > $TMPFOLDER/predicates.lst  
-	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '"subject":{"@id":"\K(.*)(?="},"objects")' | sort -u >> $TMPFOLDER/subjects.lst 
+	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '"subject":{"@id":"\K(.*)(?="},"objects")'  >> $TMPFOLDER/subjects.all.lst 
 done
+
+cat $TMPFOLDER/predicates.all.lst 	| sort S12G --parallel=12 | uniq -c | sort -nr S12G --parallel=12 > $TMPFOLDER/predicates.lst  
+cat $TMPFOLDER/subjects.all.lst 	| sort -u -S12G --parallel=12 > $TMPFOLDER/subjects.lst  
 
 
 #PRED 1
