@@ -1,9 +1,11 @@
 PREFIX dbo:<http://dbpedia.org/ontology/>
 
+# Note: the graph has many,many intermediate identifiers, which we do not need here....
+
 CONSTRUCT {
-?s a dbo:Monument; ?p ?o . 
+?s a dbo:Monument .
 } WHERE {
-?s a <https://linkeddata.cultureelerfgoed.nl/def/ceo#Rijksmonument> ; ?p ?o .
+?s a <https://linkeddata.cultureelerfgoed.nl/def/ceo#Rijksmonument> .
 }
 
 
