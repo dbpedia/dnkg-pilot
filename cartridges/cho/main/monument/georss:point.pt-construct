@@ -5,9 +5,10 @@ prefix georss: <http://www.georss.org/georss/>
 
 
 CONSTRUCT{
-  ?s georss:point ?polygon.
+  ?s georss:point ?point.
 }{
  ?s ceo:heeftGeometrie/ceo:asWKT-RD ?polygon. 
+ bind(replace(str(?polygon), "POLYGON\\(\\(([0-9]*\\.[0-9]*)\\s([0-9]*\\.[0-9]*).*\\)\\)", "$1 $2") as ?point)
 }
 
 
