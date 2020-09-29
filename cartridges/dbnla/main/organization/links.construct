@@ -11,5 +11,5 @@ CONSTRUCT {
 } {
 ?s a schema:Organization .
 ?s owl:sameAs ?o .
-  FILTER (	strstarts(str(?s),"http://data.bibliotheken.nl/id/dbnla/")
+ FILTER (	strstarts(str(?s),"http://data.bibliotheken.nl/id/dbnla/")).
 } 
