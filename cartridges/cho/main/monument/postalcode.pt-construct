@@ -1,0 +1,27 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT{
+  ?s dbo:postalcode ?postcode.
+}{
+ ?s ceo:heeftLocatieAanduiding/ceo:heeftLocatieAdres [
+	a ceo:Adresgegevens;
+	ceo:postcode ?postcode;
+ 
+ ] . 
+}
+
+#<https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/adresgegevens/100502510654>
+#  a ceo:Adresgegevens;
+#  ceo:adresgegevensnummer 100502510654;
+# ceo:gemeenteCode "654";
+# ceo:heeftGemeente <http://standaarden.overheid.nl/owms/terms/Borsele_(gemeente)>;
+#  ceo:heeftProvincie <http://standaarden.overheid.nl/owms/terms/Zeeland_(provincie)>;
+#  ceo:hoofdadres true;
+#  ceo:huisnummer "8";
+#  ceo:openbareRuimte "Kerkplein";
+#  ceo:postcode "4441AG";
+#  ceo:provincieCode "ZL";
+#  ceo:volledigAdres "Kerkplein 8";
+#  ceo:woonplaatsnaam "Ovezande" .
