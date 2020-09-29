@@ -5,10 +5,60 @@ git pull
 cd ..
 wget -nc https://github.com/SmartDataAnalytics/RdfProcessingToolkit/releases/download/rdf-processing-toolkit-bundle-1.0.7-SNAPSHOT/rdf-processing-toolkit-bundle-1.0.7-SNAPSHOT-jar-with-dependencies.jar
 cartridges=../
-cartridge=kadaster
-dataset=bag
-version=2020.09.29
+cartridge=$1
+dataset=$2
+version=$3
 rawinput=kadaster_partition\=bag.nt.bz2
+
+mkdir -p tmp/downloads
+rm -rf tmp/downloads/dnkg
+
+query=$(cat <<-END
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX db: <https://databus.dbpedia.org/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dataid: <http://dataid.dbpedia.org/ns/core#>
+SELECT DISTINCT ?file WHERE
+{ 
+	{
+		SELECT DISTINCT ?file WHERE {
+			?dataset dcat:distribution ?distribution .
+			?distribution dcat:downloadURL ?file .
+			{
+				?dataset dataid:group <https://databus.dbpedia.org/dnkg/raw-exports> .
+				{
+					?dataset dataid:artifact <https://databus.dbpedia.org/dnkg/raw-exports/$cartridge> .
+					{
+						?distribution dct:hasVersion ?version {
+							SELECT (?v as ?version) { 
+								?dataset dataid:artifact <https://databus.dbpedia.org/dnkg/raw-exports/$cartridge> . 
+								?dataset dct:hasVersion ?v . 
+							} ORDER BY DESC (?version) LIMIT 1 
+						}
+					}
+					{ ?distribution <http://dataid.dbpedia.org/ns/core#formatExtension> 'nt'^^<http://www.w3.org/2001/XMLSchema#string> . }
+		#			{ ?distribution <http://dataid.dbpedia.org/ns/cv#set> '$dataset'^^<http://www.w3.org/2001/XMLSchema#string> . }
+				}
+			}
+		}
+	}
+ }
+END
+)
+
+echo "$query" > query.sparql
+
+docker run --rm --name databus-client \
+    -v $(pwd)/query.sparql:/opt/databus-client/query.sparql \
+    -v $(pwd)/tmp/downloads:/var/repo \
+    dbpedia/databus-client
+
+
+rawinput=tmp/downloads/dnkg/raw-exports/$cartridge/*/*.*
+
+
 for folder in dnkg-pilot/cartridges/$cartridge/$dataset/* ; do
 	tmp=tmp/$cartridge/$dataset/$version
 	mkdir -p $tmp
