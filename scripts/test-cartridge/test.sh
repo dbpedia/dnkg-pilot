@@ -2,7 +2,14 @@
 CARTRIDGE=$1
 #CARTRIDGE="https://databus.dbpedia.org/dnkg/cartridges/kadaster-cartridge"
 
+## SETUP
+TMPFOLDER="/tmp/cartridgestats/"`echo -n $CARTRIDGE | sed 's|^https://databus.dbpedia.org/dnkg/cartridges/||'`
+rm -r $TMPFOLDER
+mkdir -p $TMPFOLDER
+echo -n "" > $TMPFOLDER/predicates.lst
+echo -n "" > $TMPFOLDER/subjects.lst
 
+## GET DOWNLOADURLs
 query="PREFIX dataid: <http://dataid.dbpedia.org/ns/core#>
 PREFIX dct:    <http://purl.org/dc/terms/>
 PREFIX dcat:   <http://www.w3.org/ns/dcat#>
@@ -25,40 +32,52 @@ SELECT DISTINCT ?file WHERE {
 }
 "
 
-
+## DOWNLOAD
 files=$(curl -H "Accept: text/csv" --data-urlencode "query=${query}" https://databus.dbpedia.org/repo/sparql | tail -n+2 | sed 's/"//g')
-rm -r /tmp/cartridgestats
-mkdir /tmp/cartridgestats
-echo -n "" > /tmp/cartridgestats/predicates.lst
-echo -n "" > /tmp/cartridgestats/subjects.lst
+
+## PROCESS
 for f in ${files} ; do 
     echo "processing $f"
-	curl $f > /tmp/cartridgestats/current.bz2
-	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '^{"predicate":{"@id":"\K(.*)(?="},"subject")'| sort | uniq -c | sort -nr  >> /tmp/cartridgestats/predicates.lst 
-	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '"subject":{"@id":"\K(.*)(?="},"objects")' | sort -u >> /tmp/cartridgestats/subjects.lst 
+	curl -s $f > /tmp/cartridgestats/current.bz2
+	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '^{"predicate":{"@id":"\K(.*)(?="},"subject")' >> $TMPFOLDER/predicates.all.lst 
+	cat $TMPFOLDER/predicates.all.lst 	| sort | uniq -c | sort -nr > $TMPFOLDER/predicates.lst  
+	lbzip2 -dc /tmp/cartridgestats/current.bz2 | grep -Po '"subject":{"@id":"\K(.*)(?="},"objects")' | sort -u >> $TMPFOLDER/subjects.lst 
 done
+
+
+#PRED 1
+FOUNDPRED1=`cat $TMPFOLDER/predicates.lst  | grep -vE '(dbpedia.org/ontology|global.dbpedia.org/property|www.w3.org/2000/01/rdf-schema|www.w3.org/1999/02/22-rdf-syntax-ns)'`
 echo "###################
-not rewritten preds
+not rewritten preds, i.e. using raw vocab :
+$FOUNDPRED1
+(SHOULD BE EMPTY)
 ###################"
-grep -v 'global.dbpedia.org' /tmp/cartridgestats/predicates.lst  | grep -v 'dbpedia.org/ontology' 
 
+
+
+# PREDS 2
+FOUND=`grep  'https://global.dbpedia.org/property'  $TMPFOLDER/predicates.lst | wc -l`
+grep  'https://global.dbpedia.org/property'  $TMPFOLDER/predicates.lst > predicates_not_in_prop_mapping.lst
 echo "###################
-preds not in id mapping
+predicates not in prop mapping (global.dbpedia.org/property):
+$FOUND
+(SHOULD BE 0)
 ###################"
-grep  'global.dbpedia.org'  /tmp/cartridgestats/predicates.lst 
 
-NOTR=`grep -v 'global.dbpedia.org'  /tmp/cartridgestats/subjects.lst | wc -l`
-R=`grep  'global.dbpedia.org'  /tmp/cartridgestats/subjects.lst | wc -l`
-TOTAL=`wc -l /tmp/cartridgestats/subjects.lst`
+
+
+NOTR=`grep -v 'global.dbpedia.org' $TMPFOLDER/subjects.lst | wc -l`
+R=`grep  'global.dbpedia.org'  $TMPFOLDER/subjects.lst | wc -l`
+TOTAL=`cat $TMPFOLDER/subjects.lst | wc -l`
 
 echo "###################
-not rewritten subjects: $NOTR
-rewritten subjects: $R
 total subjects: $TOTAL
+rewritten subjects: $R
+NOT REWRITTEN SUBJECTS: $NOTR (SHOULD BE 0)
 ###################"
 
 echo "DETAILS: 
-ls /tmp/cartridgestats"
+ls $TMPFOLDER"
 
 
 
