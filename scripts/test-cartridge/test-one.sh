@@ -57,7 +57,7 @@ $FOUNDPRED1
 
 # PREDS 2
 FOUND=`grep  'https://global.dbpedia.org/property'  $TMPFOLDER/predicates.lst | wc -l`
-grep  'https://global.dbpedia.org/property'  $TMPFOLDER/predicates.lst > predicates_not_in_prop_mapping.lst
+grep  'https://global.dbpedia.org/property'  $TMPFOLDER/predicates.lst > $TMPFOLDER/predicates_not_in_prop_mapping.lst
 echo "###################
 predicates not in prop mapping (global.dbpedia.org/property):
 $FOUND
