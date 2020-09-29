@@ -46,22 +46,24 @@ done
 
 
 #PRED 1
-FOUNDPRED1=`cat $TMPFOLDER/predicates.lst  | grep -vE '(dbpedia.org/ontology|global.dbpedia.org/property|www.w3.org/2000/01/rdf-schema|www.w3.org/1999/02/22-rdf-syntax-ns)'`
-echo "###################
-not rewritten preds, i.e. using raw vocab :
-$FOUNDPRED1
-(SHOULD BE EMPTY)
+#FOUNDPRED1=`cat $TMPFOLDER/predicates.lst  | grep -vE '(dbpedia.org/ontology|global.dbpedia.org/property|www.w3.org/2000/01/rdf-schema|www.w3.org/1999/02/22-rdf-syntax-ns)'`
+#echo "###################
+#not rewritten preds, i.e. using raw vocab :
+#$FOUNDPRED1
+#(SHOULD BE EMPTY)
 ###################"
 
 
 
-# PREDS 2
-FOUND=`grep  'https://global.dbpedia.org/property'  $TMPFOLDER/predicates.lst | wc -l`
-grep  'https://global.dbpedia.org/property'  $TMPFOLDER/predicates.lst > $TMPFOLDER/predicates_not_in_prop_mapping.lst
+# PREDS 
+NOTR=`grep -v 'global.dbpedia.org' $TMPFOLDER/predicates.lst | wc -l`
+R=`grep  'global.dbpedia.org'  $TMPFOLDER/predicates.lst | wc -l`
+TOTAL=`cat $TMPFOLDER/predicates.lst | wc -l`
+
 echo "###################
-predicates not in prop mapping (global.dbpedia.org/property):
-$FOUND
-(SHOULD BE 0)
+total predicates: $TOTAL
+rewritten predicates: $R
+NOT REWRITTEN SUBJECTS: $NOTR (SHOULD BE 0)
 ###################"
 
 
