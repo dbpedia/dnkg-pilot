@@ -3,7 +3,7 @@ PREFIX dbo:<http://dbpedia.org/ontology/>
 CONSTRUCT {
 ?s a dbo:Monument; ?p ?o . 
 } WHERE {
-?s a <https://linkeddata.cultureelerfgoed.nl/datamodel#Rijksmonument> ; ?p ?o .
+?s a <https://linkeddata.cultureelerfgoed.nl/def/ceo#Rijksmonument> ; ?p ?o .
 }
 
 

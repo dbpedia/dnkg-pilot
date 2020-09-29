@@ -1,0 +1,20 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix georss: <http://www.georss.org/georss/>
+
+
+CONSTRUCT{
+  ?s georss:point ?polygon.
+}{
+ ?s ceo:heeftGeometrie/ceo:asWKT-RD ?polygon. 
+}
+
+
+#<https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/geometrie/44329>
+#    <http://www.opengis.net/ont/geosparql#asWKT> "MULTIPOLYGON(((3.82223831783361 51.428445539904,3.82220369557167 51.4284486707061,3.82219618017737 51.4284162038927,3.82223223808491 51.4284130923567,3.82223831783361 51.428445539904)))"^^<http://www.opengis.net/ont/geosparql#wktLiteral> ;
+#    a ceo:Geometrie ;
+#    ceo:asWKT-RD "MULTIPOLYGON(((46169.20015 383315.800175,46166.800175 383316.2001,46166.200075 383312.599925,46168.699925 383312.2,46169.20015 383315.800175)))" ;
+#    ceo:geometrienummer 44329 ;
+#    ceo:heeftGeometrieKwaliteit <https://data.cultureelerfgoed.nl/term/id/rn/7731e08b-77bc-4eb9-b325-6849a8ea8b19> ;
+#    ceo:heeftGeometrieStatus <https://data.cultureelerfgoed.nl/term/id/rn/f30ec8d9-bd22-40e1-bf32-026721041e47> .

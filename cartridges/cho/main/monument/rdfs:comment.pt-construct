@@ -3,7 +3,7 @@ prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT{
-  ?s dbo:status ?status.
+  ?s rdfs:comment ?comment.
 }{
- ?s ceo:heeftToestand/skos:prefLabel ?status. 
+ ?s ceo:heeftOmschrijving/ceo:omschrijving ?comment. 
 }
