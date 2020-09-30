@@ -1,0 +1,8 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+CONSTRUCT{
+  ?s dbo:address ?address.
+}{
+  ?s a ceo:Rijksmonument.
+  ?s ceo:isHoofdobjectVanComplex/ceo:heeftHoofdobject/ceo:heeftLocatieAanduiding/ceo:heeftLocatieAdres/ceo:volledigAdres ?address .
+} 

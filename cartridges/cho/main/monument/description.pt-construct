@@ -1,8 +1,8 @@
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
 CONSTRUCT{
-  ?s dbo:codeNationalMonument ?codeNationalMonument.
+  ?s dbo:description ?description.
 }{
   ?s a ceo:Rijksmonument.
-  ?s ceo:rijksmonumentnummer ?codeNationalMonument .
-} 
+  ?s ceo:heeftKennisregistratie/ceo:omschrijving ?description .
+}
