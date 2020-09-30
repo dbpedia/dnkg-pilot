@@ -1,10 +1,17 @@
 cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+cho	main	monument	address	https://linkeddata.cultureelerfgoed.nl/def/ceo#volledigAdres	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/address.pt-construct
 cho	main	monument	administrativeStatus	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/administrativeStatus.pt-construct
 cho	main	monument	buildingType	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/buildingType.pt-construct
 cho	main	monument	codeNationalMonument	https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/codeNationalMonument.pt-construct
+cho	main	monument	description	https://linkeddata.cultureelerfgoed.nl/def/ceo#omschrijving	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/description.pt-construct
 cho	main	monument	georss:point	https://linkeddata.cultureelerfgoed.nl/def/ceo#asWKT-RD	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/georss:point.pt-construct
+cho	main	monument	locationName	https://linkeddata.cultureelerfgoed.nl/def/ceo#locatienaam	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/locationName.pt-construct
+cho	main	monument	name	https://linkeddata.cultureelerfgoed.nl/def/ceo#naam	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/name.pt-construct
 cho	main	monument	postalcode	https://linkeddata.cultureelerfgoed.nl/def/ceo#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/postalcode.pt-construct
 cho	main	monument	rdfs:comment	https://linkeddata.cultureelerfgoed.nl/def/ceo#omschrijving	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/rdfs:comment.pt-construct
+cho	main	monument	recordDate	https://linkeddata.cultureelerfgoed.nl/def/ceo#registratiedatum	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/recordDate.pt-construct
+cho	main	monument	registryNumber	https://linkeddata.cultureelerfgoed.nl/def/ceo#kennisregistratienummer	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/registryNumber.pt-construct
 cho	main	monument	settlement	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/settlement.pt-construct
 cho	main	monument	status	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/status.pt-construct
 cho	main	monument	todo	https://linkeddata.cultureelerfgoed.nl/def/ceo#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/todo.pt-construct
+cho	main	monument	type	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/type.pt-construct
