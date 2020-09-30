@@ -1,5 +1,9 @@
+cho	monument	administrativeStatus	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/administrativeStatus.pt-construct
+cho	monument	buildingType	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/buildingType.pt-construct
+cho	monument	codeNationalMonument	https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/codeNationalMonument.pt-construct
 cho	monument	georss:point	https://linkeddata.cultureelerfgoed.nl/def/ceo#asWKT-RD	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/georss:point.pt-construct
 cho	monument	postalcode	https://linkeddata.cultureelerfgoed.nl/def/ceo#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/postalcode.pt-construct
 cho	monument	rdfs:comment	https://linkeddata.cultureelerfgoed.nl/def/ceo#omschrijving	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/rdfs:comment.pt-construct
+cho	monument	settlement	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/settlement.pt-construct
 cho	monument	status	http://www.w3.org/2004/02/skos/core#prefLabel	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/status.pt-construct
 cho	monument	todo	https://linkeddata.cultureelerfgoed.nl/def/ceo#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/cho/main/monument/todo.pt-construct
