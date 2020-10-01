@@ -8,5 +8,5 @@ CONSTRUCT {
 }{
 	?s a ceo:Rijksmonument .
     ?s ceo:heeftBasisregistratieRelatie/ceo:heeftBAGRelatie/ceo:pandIdentificatie ?pandid.
-    BIND (concat("http://bag.basisregistraties.overheid.nl/bag/id/pand/",?pandid) as ?pand)
+    BIND (IRI(concat("http://bag.basisregistraties.overheid.nl/bag/id/pand/",?pandid)) as ?pand)
 }
