@@ -1,7 +1,7 @@
 prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
 prefix dbo: <http://dbpedia.org/ontology/>
 construct {
-  ?openbareRuimte a dbo:RouteOfTransportation, ?type.
+  ?openbareRuimte a dbo:RouteOfTransportation; ?p ?o.
 } where {
-  ?openbareRuimte a bag:OpenbareRuimte, ?type.
+  ?openbareRuimte a bag:OpenbareRuimte; ?p ?o.
 }

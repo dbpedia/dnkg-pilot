@@ -1,10 +1,17 @@
 prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
 prefix geo: <http://www.opengis.net/ont/geosparql#>
 prefix georss: <http://www.georss.org/georss/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 construct {
   ?pand georss:point ?georss.
+  ?pand wgs84:lat ?lat .
+  ?pand wgs84:long ?long .
 } where {
   [ bag:pandrelatering ?pand;
     geo:hasGeometry/geo:asWKT ?point ].
-  bind(replace(str(?point), "POINT\\(([0-9]*\\.[0-9]*)\\s([0-9]*\\.[0-9]*)\\)", "$2 $1") as ?georss)
+  bind(replace(str(?point), "POINT\\(([0-9]*\\.[0-9]*)\\s([0-9]*\\.[0-9]*)\\)", "$2 $1") as ?georss) .
+  bind(xsd:float(replace(str(?point), "POINT\\(([0-9]*\\.[0-9]*)\\s([0-9]*\\.[0-9]*)\\)", "$2")) as ?lat) .
+  bind(xsd:float(replace(str(?point), "POINT\\(([0-9]*\\.[0-9]*)\\s([0-9]*\\.[0-9]*)\\)", "$1")) as ?long) .
 }
