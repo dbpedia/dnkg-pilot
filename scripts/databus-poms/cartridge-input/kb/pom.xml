@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>kb</artifactId>
+    <version>2020.09.29</version>
     <packaging>jar</packaging>
     <properties>
 	    <databus.license>http://purl.oclc.org/NET/rdflicense/odbc-by1.0</databus.license>

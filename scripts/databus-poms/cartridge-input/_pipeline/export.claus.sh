@@ -8,7 +8,7 @@ cartridges=../
 cartridge=$1
 dataset=$2
 version=$3
-rawinput=kadaster_partition\=bag.nt.bz2
+#rawinput=kadaster_partition\=bag.nt.bz2
 
 mkdir -p tmp/downloads
 rm -rf tmp/downloads/dnkg
@@ -59,7 +59,7 @@ docker run --rm --name databus-client \
 rawinput=tmp/downloads/dnkg/raw-exports/$cartridge/*/*.*
 
 
-for folder in dnkg-pilot/cartridges/$cartridge/$dataset/* ; do
+for folder in dnkg-pilot/cartridges/$cartridge/$dataset/*/ ; do
 	tmp=tmp/$cartridge/$dataset/$version
 	mkdir -p $tmp
 	db=$tmp/tdb_files
@@ -68,7 +68,6 @@ for folder in dnkg-pilot/cartridges/$cartridge/$dataset/* ; do
 	java -jar rdf-processing-toolkit-bundle-1.0.7-SNAPSHOT-jar-with-dependencies.jar sparql-integrate -e tdb2 --split $tmp/$type $rawinput $folder/*construct --db $db --db-keep --out-format=NTRIPLES
        for f in $tmp/$type/*.nt ; do
 	       prop=$(basename $f .nt)
-	       echo $prop
 	       fileprefix=${cartridge}_partition\=${type}_set\=${dataset}_content\=
 	       if [ $prop == "links" ]; then 
 		       file=${fileprefix}links
