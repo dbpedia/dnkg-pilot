@@ -63,7 +63,8 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 					val op: Op = Algebra.compile(query);
 				 } catch {
 				case e: Exception => {
-					System.err.println("::error ::"+"\nfix:\n " + forValidation +"\n"+e.getMessage)
+					System.err.println("::error ::"+" fix: " + forValidation)
+					println(e.getMessage)
 					errCount+=1
 					System.exit(-1)
 					}
