@@ -1,3 +1,4 @@
+errortest
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
 CONSTRUCT{
