@@ -103,9 +103,9 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 				println(" |-> OK")
 			  } catch {
 				case e: Exception => {
-					System.err.println("\nfix:\n " + queryFile +"\n"+e.getMessage)
-					System.out.println("::error ::"+" fix: " + forValidation)
-					System.out.println("::warning ::"+" fix: " + forValidation)
+					System.err.println("\nError in " + queryFile +" :\n"+e.getMessage)
+					System.out.println("::error ::"+"Error in " + forValidation)
+					System.out.println("::warning ::"+" Error in: " + forValidation)
 					println(e.getMessage)
 					System.exit(-1)
 					}
