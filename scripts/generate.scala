@@ -64,7 +64,7 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 				 } catch {
 				case e: Exception => {
 					System.err.println("\nfix:\n " + forValidation +"\n"+e.getMessage)
-					errCount++
+					errCount+=1
 					System.exit(-1)
 					}
 			  }//end catch
