@@ -41,6 +41,7 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
     for (dataset <- ls ! cartridge) {
 
 		val datasetName = dataset.last
+	        var errCount = 0
 		println("|>"+datasetName + " at " + dataset)
 
 		for (partition <- (ls ! dataset).filter(!_.toString.endsWith(".md"))) {
@@ -62,7 +63,8 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 					val op: Op = Algebra.compile(query);
 				 } catch {
 				case e: Exception => {
-					println("\nfix:\n " + forValidation +"\n"+e.getMessage)
+					System.err.println("\nfix:\n " + forValidation +"\n"+e.getMessage)
+					errCount++
 					System.exit(-1)
 					}
 			  }//end catch
