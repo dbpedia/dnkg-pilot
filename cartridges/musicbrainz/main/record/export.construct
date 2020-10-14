@@ -2,7 +2,7 @@ PREFIX dbo:<http://dbpedia.org/ontology/>
 PREFIX mo: <http://purl.org/ontology/mo/>
 
 CONSTRUCT {
-?s a dbo:Album .
+?s a dbo:Album; ?p ?o .
 } WHERE {
-?s a mo:Record .
+?s a mo:Record; ?p ?o .
 }
