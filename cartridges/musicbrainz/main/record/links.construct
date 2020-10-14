@@ -1,0 +1,11 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX mo: <http://purl.org/ontology/mo/>
+PREFIX owl: <http://www.w3.org/ontology/>
+
+CONSTRUCT {
+	?s a dbo:Album .
+	?s owl:sameAs ?o .
+}{
+	?s a mo:Record .
+	?s owl:sameAs ?o .
+}
