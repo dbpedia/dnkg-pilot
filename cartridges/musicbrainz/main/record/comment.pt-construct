@@ -1,0 +1,9 @@
+PREFIX mo:<http://purl.org/ontology/mo/>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:commnet ?comment.
+}{
+	?s a mo:Record.
+	?s mo:track/mo:publication_of/rdfs:comment ?comment.
+}

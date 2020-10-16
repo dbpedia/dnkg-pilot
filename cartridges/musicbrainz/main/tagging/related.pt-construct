@@ -1,0 +1,11 @@
+PREFIX mo:<http://purl.org/ontology/mo/>
+PREFIX muto:<http://purl.org/muto/core#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX event:<http://purl.org/NET/c4dm/event.owl#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+CONSTRUCT{
+	?s dbo:related ?seeAlso.
+}{
+	?s a muto:Tagging.
+	?s muto:taggedResource/event:factor/rdfs:seeAlso ?seeAlso.
+}

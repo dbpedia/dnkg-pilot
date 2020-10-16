@@ -1,0 +1,7 @@
+PREFIX muto:<http://purl.org/muto/core>
+CONSTRUCT{
+	?s a muto:Tagging; ?p ?o.
+}{
+	?s a muto:Tagging ?p ?o.
+}
+

@@ -1,0 +1,8 @@
+PREFIX mo:<http://purl.org/ontology/mo/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:duration ?duration.
+}{
+	?s a mo:Record.
+	?s mo:track/mo:duration ?duration.
+}

@@ -1,0 +1,11 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX owl: <http://www.w3.org/ontology/>
+PREFIX muto:<http://purl.org/muto/core#>
+CONSTRUCT {
+        ?s a muto:Tagging .
+        ?s owl:sameAs ?o .
+}{
+        ?s a muto:Tagging .
+        ?s owl:sameAs ?o .
+}
+

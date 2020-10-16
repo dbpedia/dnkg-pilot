@@ -1,0 +1,11 @@
+PREFIX mo:<http://purl.org/ontology/mo/>
+PREFIX muto:<http://purl.org/muto/core#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+CONSTRUCT{
+	?s dbo:locationName ?label
+}{
+	?s a muto:Tagging.
+	?s muto:taggedResource/mo:label/foaf:based_near/rdfs:label ?label.
+}
+

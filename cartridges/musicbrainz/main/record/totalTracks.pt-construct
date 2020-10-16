@@ -1,0 +1,8 @@
+PREFIX mo:<http://purl.org/ontology/mo/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:totalTracks ?total.
+}{
+	?s a mo:Record.
+	?s mo:track_count ?total.
+}

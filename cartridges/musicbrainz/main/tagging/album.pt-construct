@@ -1,0 +1,9 @@
+PREFIX mo:<http://purl.org/ontology/mo/>
+PREFIX muto:<http://purl.org/muto/core#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:album ?record.
+}{
+	?s a muto:Tagging.
+	?s muto:taggedResource/mo:record ?record.
+}

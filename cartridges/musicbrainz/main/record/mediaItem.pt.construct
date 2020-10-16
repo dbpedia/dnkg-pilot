@@ -1,0 +1,9 @@
+PREFIX mo:<http://purl.org/ontology/mo/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:mediaItem ?item.
+}{
+	?s a mo:Record.
+	?s mo:media_type ?item.
+}
+
