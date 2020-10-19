@@ -1,0 +1,10 @@
+PREFIX gn:<http://www.geonames.org/ontology#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s a dbo:Place .
+	?s owl:sameAs ?o .
+}{
+	?s a gn:Feature .
+        ?s owl:sameAs ?o. 
+}

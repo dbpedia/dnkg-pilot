@@ -1,0 +1,7 @@
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+CONSTRUCT{
+	?s dbo:documentDesignation ?page.
+}{
+	?s foaf:page ?page.
+}
