@@ -1,0 +1,8 @@
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
+CONSTRUCT{
+	?s dbo:birthPlace ?place
+}{
+	?s a gnd:DifferentiatedPerson.
+	?s gnd:placeOfBirth/gnd:place/gnd:preferredNameForThePlaceOrGeographicName ?place.
+}
