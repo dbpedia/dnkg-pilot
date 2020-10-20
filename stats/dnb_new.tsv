@@ -1,0 +1,5 @@
+cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+dnb	main	DifferentiatedPerson	birthPlace	https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/dnb/main/DifferentiatedPerson/birthPlace.pt-construct
+dnb	main	DifferentiatedPerson	deathPlace	https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/dnb/main/DifferentiatedPerson/deathPlace.pt-construct
+dnb	main	DifferentiatedPerson	description	https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/dnb/main/DifferentiatedPerson/description.pt-construct
+dnb	main	DifferentiatedPerson	profession	https://d-nb.info/standards/elementset/gnd#gndSubjectCategory	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/dnb/main/DifferentiatedPerson/profession.pt-construct

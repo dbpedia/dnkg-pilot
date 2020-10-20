@@ -1,0 +1,8 @@
+cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+musicbrainz	main	record	comment	http://www.w3.org/2000/01/rdf-schema#comment	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/musicbrainz/main/record/comment.pt-construct
+musicbrainz	main	record	duration	http://purl.org/ontology/mo/duration	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/musicbrainz/main/record/duration.pt-construct
+musicbrainz	main	record	totalTracks	http://purl.org/ontology/mo/track_count	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/musicbrainz/main/record/totalTracks.pt-construct
+musicbrainz	main	record	trackNumber	http://purl.org/ontology/mo/track_number	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/musicbrainz/main/record/trackNumber.pt-construct
+musicbrainz	main	tagging	album	http://purl.org/ontology/mo/record	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/musicbrainz/main/tagging/album.pt-construct
+musicbrainz	main	tagging	locationName	http://www.w3.org/2000/01/rdf-schema#label	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/musicbrainz/main/tagging/locationName.pt-construct
+musicbrainz	main	tagging	related	http://www.w3.org/2000/01/rdf-schema#seeAlso	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/musicbrainz/main/tagging/related.pt-construct

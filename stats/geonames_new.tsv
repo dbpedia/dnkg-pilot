@@ -1,0 +1,5 @@
+cartridge/publisher	dataset	partition	prop target(pt)	deepestProp	github 
+geonames	main	Feature	altitude	http://www.w3.org/2003/01/geo/wgs84_pos#alt	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/geonames/main/Feature/altitude.pt-construct
+geonames	main	Feature	documentDesignation	http://xmlns.com/foaf/0.1/page	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/geonames/main/Feature/documentDesignation.pt-construct
+geonames	main	Feature	geo_lat	http://www.w3.org/2003/01/geo/wgs84_pos#lat	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/geonames/main/Feature/geo_lat.pt-construct
+geonames	main	Feature	geo_long	http://www.w3.org/2003/01/geo/wgs84_pos#long	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/geonames/main/Feature/geo_long.pt-construct
