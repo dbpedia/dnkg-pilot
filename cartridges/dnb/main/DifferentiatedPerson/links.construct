@@ -2,7 +2,7 @@ PREFIX dbo:<http://dbpedia.org/ontology/>
 PREFIX owl:<http://www.w3.org/2002/07/owl#>
 PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
 CONSTRUCT{
-	?s a dbo:Person
+	?s a dbo:Person.
 	?s owl:sameAs ?o.
 }{
 	?s a gnd:DifferentiatedPerson.
