@@ -1,0 +1,8 @@
+PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:musicComposer ?composer.
+}{
+	?s a gnd:MusicalWork.
+	?s gnd:firstComposer ?composer.
+}

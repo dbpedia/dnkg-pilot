@@ -1,0 +1,8 @@
+PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:instrument ?instrument.
+}{
+	?s a gnd:MusicalWork.
+	?s gnd:formOfWorkAndExpression/gnd:mediumOfPerformance/gnd:preferredNameForTheSubjectHeading ?instrument.
+}
