@@ -73,7 +73,7 @@ def generate(stats: os.Path, cartridges: os.Path, debugprint: Boolean = false): 
 
 
 			for (queryFile <- (ls.rec ! partition).filter(_.toString.endsWith("pt-construct"))) {
-			  val pt = queryFile.last.replace(".pt-construct", "")
+                          val pt = queryFile.last.replace(".pt-construct", "")
 			  print("|-->"+queryFile.last+ " | dbo:"+pt)
 			  try {
 

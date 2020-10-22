@@ -1,3 +1,4 @@
+#firstComposer
 PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
 PREFIX dbo:<http://dbpedia.org/ontology/>
 CONSTRUCT{

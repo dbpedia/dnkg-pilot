@@ -1,8 +1,9 @@
+#professionOrOccupation
 PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
 PREFIX dbo:<http://dbpedia.org/ontology/>
 CONSTRUCT{
-	?s dbo:description ?description.
+	?s dbo:profession ?profession.
 }{
 	?s a gnd:DifferentiatedPerson.
-	?s gnd:biographicalOrHistoricalInformation ?description.
+	?s gnd:professionOrOccupation/gnd:gndSubjectCategory ?profession. 
 }

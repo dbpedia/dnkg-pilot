@@ -1,3 +1,4 @@
+#factor
 PREFIX mo:<http://purl.org/ontology/mo/>
 PREFIX muto:<http://purl.org/muto/core#>
 PREFIX dbo:<http://dbpedia.org/ontology/>
