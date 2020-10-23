@@ -7,5 +7,8 @@ kadaster	bag	openbareRuimte	status	http://www.w3.org/2004/02/skos/core#definitio
 kadaster	bag	pand	a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/a.pt-construct
 kadaster	bag	pand	address	http://bag.basisregistraties.overheid.nl/def/bag#huisnummertoevoeging	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/address.pt-construct
 kadaster	bag	pand	georss:point	http://www.opengis.net/ont/geosparql#asWKT	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/georss:point.pt-construct
+kadaster	bag	pand	hasOutsidePlace	http://bag.basisregistraties.overheid.nl/def/bag#bijbehorendeOpenbareRuimte	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/hasOutsidePlace.pt-construct
 kadaster	bag	pand	location	http://bag.basisregistraties.overheid.nl/def/bag#bijbehorendeWoonplaats	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/location.pt-construct
 kadaster	bag	pand	postalCode	http://bag.basisregistraties.overheid.nl/def/bag#postcode	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/postalCode.pt-construct
+kadaster	bag	pand	status	http://www.w3.org/2004/02/skos/core#definition	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/status.pt-construct
+kadaster	bag	pand	surfaceArea	http://bag.basisregistraties.overheid.nl/def/bag#pandrelatering	https://github.com/dbpedia/dnkg-pilot/blob/master/cartridges/kadaster/bag/pand/surfaceArea.pt-construct
