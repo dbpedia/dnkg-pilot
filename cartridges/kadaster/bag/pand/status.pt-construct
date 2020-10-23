@@ -1,0 +1,10 @@
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+construct{
+  ?building a dbo:Building;
+    dbo:status ?status.
+} where {
+  ?building a bag:Pand;
+    bag:status/skos:definition ?status.
+}
