@@ -1,0 +1,9 @@
+prefix bag: <http://bag.basisregistraties.overheid.nl/def/bag#>
+prefix dbo: <http://dbpedia.org/ontology/>
+construct{
+  ?building a dbo:Building;
+    dbo:hasOutsidePlace ?hasOutsidePlace.
+} where { 
+  [ bag:pandrelatering ?building;
+    bag:hoofdadres/bag:bijbehorendeOpenbareRuimte ?hasOutsidePlace].
+} 
