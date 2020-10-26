@@ -1,0 +1,7 @@
+PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s a dbo:Company; ?p ?o.
+}{
+	?s a gnd:CorporateBody; ?p ?o.
+}

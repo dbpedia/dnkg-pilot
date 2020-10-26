@@ -1,0 +1,10 @@
+PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+CONSTRUCT{
+	?s a dbo:Company.
+	?s owl:sameAs ?o. 
+}{
+	?s a gnd:CorporateBody.
+	?s owl:sameAs ?o.
+}

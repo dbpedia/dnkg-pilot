@@ -1,0 +1,9 @@
+#preferredNameForTheCorporateBody
+PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:locationName ?location.
+}{
+	?s a gnd:CorporateBody.
+	?s gnd:preferredNameForTheCorporateBody ?location.
+}

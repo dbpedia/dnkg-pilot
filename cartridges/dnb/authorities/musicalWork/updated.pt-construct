@@ -1,0 +1,9 @@
+#describedby
+PREFIX dbo:<http://dbpedia.org/ontology/>
+PREFIX dc:<http://purl.org/dc/terms/>
+PREFIX wdrs:<http://www.w3.org/2007/05/powder-s#>
+CONSTRUCT{
+	?s dbo:updated ?modified.
+}{
+	?s wdrs:describedby/dc:modified ?modified.
+}

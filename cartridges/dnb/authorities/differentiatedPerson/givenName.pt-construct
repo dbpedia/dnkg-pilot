@@ -1,0 +1,8 @@
+#forename
+PREFIX gnd:<ttps://d-nb.info/standards/elementset/gnd#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:foaf:givenName ?name
+}{
+	?s gnd:forename ?name.
+}

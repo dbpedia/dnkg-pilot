@@ -1,0 +1,8 @@
+#company
+PREFIX gnd:<https://d-nb.info/standards/elementset/gnd#>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:company ?company.
+}{
+	?s gnd:placeOfBusiness ?company.
+}
