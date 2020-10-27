@@ -1,0 +1,7 @@
+PREFIX dct:<http://purl.org/dc/terms/>
+PREFIX dbo:<http://dbpedia.org/ontology/>
+CONSTRUCT{
+	?s dbo:license ?license.
+}{
+	?s dct:license ?license.
+}
